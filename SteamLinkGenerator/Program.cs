@@ -131,7 +131,7 @@ class Program
     static async Task ConsoleOutput()
     {
         Console.Clear();
-        Console.WriteLine($"CHECKED[{totalChecked}]/TOTAL:[{total_val}]/VALID:[{valid}]");
+        Console.WriteLine($"CHECKED[{totalChecked}]/TOTAL[{total_val}]/VALID[{valid}]");
     }
 
 }
