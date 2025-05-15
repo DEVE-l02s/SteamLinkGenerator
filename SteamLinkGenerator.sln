@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamLinkGenerator", "SteamLinkGenerator\SteamLinkGenerator.csproj", "{2C3C44C7-98C4-4C2B-BD2B-0FF83DFC63DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C3C44C7-98C4-4C2B-BD2B-0FF83DFC63DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3C44C7-98C4-4C2B-BD2B-0FF83DFC63DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3C44C7-98C4-4C2B-BD2B-0FF83DFC63DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3C44C7-98C4-4C2B-BD2B-0FF83DFC63DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C458A1B-D3F8-4BDF-8336-5D7E3FC12EB8}
+	EndGlobalSection
+EndGlobal

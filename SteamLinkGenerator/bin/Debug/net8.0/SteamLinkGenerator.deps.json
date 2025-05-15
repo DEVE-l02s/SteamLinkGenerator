@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SteamLinkGenerator/1.0.0": {
+        "runtime": {
+          "SteamLinkGenerator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SteamLinkGenerator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
