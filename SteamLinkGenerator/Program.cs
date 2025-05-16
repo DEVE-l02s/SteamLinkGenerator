@@ -2,34 +2,79 @@
 
 class Program
 {
-    #region vars
+    #region Settings
     private static double valid = 0;
     private static double totalChecked = 0;
     private static double total_val = 0;
 
     private static readonly SemaphoreSlim semaphore = new SemaphoreSlim(1);
-    //static readonly char[] symbols = "111NNN".ToCharArray(); //edit character set for custom generation
-    static readonly char[] symbols = "abcdefghijklmnopqrstuvwxyz0123456789-_".ToCharArray(); // For all possible variations
+    static char[] symbols = "abcdefghijklmnopqrstuvwxyz0123456789-_".ToCharArray(); //For all possible variations
     static readonly HttpClient httpClient = new HttpClient();
     static readonly ConcurrentQueue<string> idQueue = new ConcurrentQueue<string>();
     #endregion
 
+    #region Main | Setting up
     static async Task Main()
     {
+        Console.WriteLine("1. ALL possible characters");
+        Console.WriteLine("2. CUSTOM character set");
+        if (!int.TryParse(Console.ReadLine(), out int answ) || answ != 1 && answ != 2)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Invalid option");
+            return;
+        }
+        else
+        {
+            if (answ == 2)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Enter the CUSTOM character set");
+                string set = Console.ReadLine();
+                if (!string.IsNullOrEmpty(set))
+                {
+                    symbols = set.ToCharArray();
+                    Console.WriteLine("Your character set is: " + new string(symbols));
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Using default character set");
+                }
+            }
+            else if (answ == 1)
+            {
+                Console.WriteLine("Your character set is: " + new string(symbols));
+            }
+        }
+
+        Console.WriteLine();
         Console.WriteLine("Enter MINIMUM length (minimum allowed is 2):");
         if (!int.TryParse(Console.ReadLine(), out int minLength) || minLength < 2)
         {
-            Console.WriteLine("Invalid minimum length.");
+            Console.WriteLine();
+            Console.WriteLine("Invalid minimum length");
             return;
         }
 
+        Console.WriteLine();
         Console.WriteLine("Enter MAXIMUM length:");
         if (!int.TryParse(Console.ReadLine(), out int maxLength) || maxLength < minLength)
         {
-            Console.WriteLine("Invalid maximum length.");
+            Console.WriteLine();
+            Console.WriteLine("Invalid maximum length");
             return;
         }
 
+        Console.WriteLine();
+        Console.WriteLine("Choose the number of threads:");
+        if (!int.TryParse(Console.ReadLine(), out int threads))
+        {
+            Console.WriteLine();
+            Console.WriteLine("Invalid input");
+            return;
+        }
+
+        Console.WriteLine();
         Console.WriteLine("Generating IDs...");
         double total = GenerateTheTotalURLNumber(minLength, maxLength);
         Console.WriteLine("TOTAL VARIATIONS: " + total);
@@ -41,19 +86,20 @@ class Program
                 idQueue.Enqueue(id);
         }
 
-        Console.WriteLine($"Starting parallel checking ({Environment.ProcessorCount} threads)...");
+        Console.WriteLine($"Starting with [{threads}] threads...");
 
         await Parallel.ForEachAsync(idQueue, new ParallelOptions
         {
-            MaxDegreeOfParallelism = 5
+            MaxDegreeOfParallelism = threads
         },
         async (id, token) =>
         {
             await CheckForValid(id, minLength, maxLength);
         });
 
-        Console.WriteLine("Done!");
+        Console.WriteLine("DONE");
     }
+    #endregion
 
     #region Generation/Convertion
     static double GenerateTheTotalURLNumber(int min, int max)
@@ -128,10 +174,13 @@ class Program
     }
     #endregion
 
+    #region Output
+
     static async Task ConsoleOutput()
     {
         Console.Clear();
         Console.WriteLine($"CHECKED[{totalChecked}]/TOTAL[{total_val}]/VALID[{valid}]");
     }
+    #endregion
 
 }

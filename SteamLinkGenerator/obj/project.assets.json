@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Projects\\SteamLinkGenerator\\SteamLinkGenerator\\SteamLinkGenerator\\SteamLinkGenerator.csproj",
+      "projectUniqueName": "A:\\Projects\\SteamLinkGenerator\\SteamLinkGenerator\\SteamLinkGenerator.csproj",
       "projectName": "SteamLinkGenerator",
-      "projectPath": "A:\\Projects\\SteamLinkGenerator\\SteamLinkGenerator\\SteamLinkGenerator\\SteamLinkGenerator.csproj",
+      "projectPath": "A:\\Projects\\SteamLinkGenerator\\SteamLinkGenerator\\SteamLinkGenerator.csproj",
       "packagesPath": "C:\\Users\\cyb3r\\.nuget\\packages\\",
-      "outputPath": "A:\\Projects\\SteamLinkGenerator\\SteamLinkGenerator\\SteamLinkGenerator\\obj\\",
+      "outputPath": "A:\\Projects\\SteamLinkGenerator\\SteamLinkGenerator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "A:\\Visual Studio\\SDK\\NuGetPackages"
@@ -51,7 +51,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -72,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

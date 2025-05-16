@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SteamLinkGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1574cfb31c3a40d4206cb1db21698e9f1ab1c831")]
 [assembly: System.Reflection.AssemblyProductAttribute("SteamLinkGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SteamLinkGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
