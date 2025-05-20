@@ -1,6 +1,10 @@
 # SteamLinkGenerator
 A tool that helps to generate a custom Steam URL
-
+### Features
+- No proxies
+- Custom generation
+- Multithreading
+  
 ❗**The only limitation is the RAM capacity**❗
 
 ## Random Generation
