@@ -80,7 +80,7 @@ class Program
         Console.WriteLine("TOTAL VARIATIONS: " + total);
         Console.WriteLine("Queueing IDs...");
 
-        for (int len = minLength; len <= maxLength; len++)
+        for (int len = minLength; len <= maxLength; len++) //RAM dependent
         {
             foreach (string id in GenerateIDsOfLength(len))
                 idQueue.Enqueue(id);
@@ -102,7 +102,7 @@ class Program
     #endregion
 
     #region Generation/Convertion
-    static double GenerateTheTotalURLNumber(int min, int max)
+    static double GenerateTheTotalURLNumber(int min, int max) //len^(num of char) + (len+1)^(num of char) + ...
     {
         double total = 0;
         for (int x = min; x <= max; x++)
@@ -139,15 +139,10 @@ class Program
         {
             string html = await httpClient.GetStringAsync(url);
 
-            if (html.Contains("<title>Steam Community :: Error</title>"))
+            if (html.Contains("<title>Steam Community :: Error</title>")) //Page search subject
             {
-                //Console.WriteLine($"FREE: {id}");
                 valid += 1;
                 await WriteToFile($"{minLenght}-{maxLength} len.txt", id + Environment.NewLine);
-            }
-            else
-            {
-                //Console.WriteLine($"TAKEN: {id}");
             }
 
             await ConsoleOutput();
@@ -175,12 +170,10 @@ class Program
     #endregion
 
     #region Output
-
     static async Task ConsoleOutput()
     {
         Console.Clear();
         Console.WriteLine($"CHECKED[{totalChecked}]/TOTAL[{total_val}]/VALID[{valid}]");
     }
     #endregion
-
 }
